@@ -1,0 +1,45 @@
+Parameters:
+  ServerName:
+    Description: ServerName to be set
+    Type: String
+  Env:
+    Description: Choose the environment to be deployed
+    Type: CommaDelimitedList
+    Default: "dev, sys, pds"
+  VPCID:
+    Description: Choose the VPC to be deployed
+    Type: List<AWS::EC2::VPC::Id>
+  keyname:
+    Description: Pick the key
+    Type: AWS::EC2::KeyPair::KeyName
+    Default: 
+  AMI:
+    Description: 
+    Type: AWS::EC2::Image::Id
+    Default: 
+  InstanceType:
+    Description:
+    Type: AWS::EC2::Instance::Type
+  SecurityGroupsList:
+    Description: 
+    Type: List<AWS::EC2::SecurityGroup::GroupName>
+    Default: 
+
+Resources:
+  myEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: !Ref keyname
+      DisableApiTermination: False
+      ImageId: !Ref AMI
+      InstanceType: !Ref InstanceType
+      Monitoring: false
+      SecurityGroupIds:
+        - !Ref SecurityGroupsList
+      UserData: !Base64 |
+        #!/bin/bash -ex
+        # put your script here
+        touch /tmp/itworks.txt
+      Tags:
+        - Key: Name
+          Value: !Ref ServerName
