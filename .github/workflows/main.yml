@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - uses: mridhul/cfn-deploy@master
+      env:
+        AWS_REGION: us-east-2
+        STACK_NAME: cfn-deploy
+        TEMPLATE_FILE: ec2.yml
+        PARAMETERS_FILE: parameter.yml
+        CAPABLITIES: CAPABLITIES_IAM
