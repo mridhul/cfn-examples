@@ -11,19 +11,16 @@ Parameters:
     Type: List<AWS::EC2::VPC::Id>
   keyname:
     Description: Pick the key
-    Type: AWS::EC2::KeyPair::KeyName
-    Default: 
+    Type: AWS::EC2::KeyPair::KeyName 
   AMI:
     Description: 
-    Type: AWS::EC2::Image::Id
-    Default: 
+    Type: AWS::EC2::Image::Id 
   InstanceType:
     Description:
     Type: AWS::EC2::Instance::Type
   SecurityGroupsList:
     Description: 
-    Type: List<AWS::EC2::SecurityGroup::GroupName>
-    Default: 
+    Type: List<AWS::EC2::SecurityGroup::GroupName> 
 
 Resources:
   myEC2Instance:
