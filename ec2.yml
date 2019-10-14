@@ -13,14 +13,14 @@ Parameters:
     Description: Pick the key
     Type: AWS::EC2::KeyPair::KeyName 
   AMI:
-    Description: 
+    Description: AMI 
     Type: AWS::EC2::Image::Id 
   InstanceType:
-    Description:
-    Type: AWS::EC2::Instance::Type
+    Description: Type
+    Type: String
   SecurityGroupsList:
-    Description: 
-    Type: List<AWS::EC2::SecurityGroup::GroupName> 
+    Description: SG
+    Type: String 
 
 Resources:
   myEC2Instance:
