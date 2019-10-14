@@ -1,0 +1,30 @@
+[
+  {
+    "ParameterKey": "ServerName",
+    "ParameterValue": "myec2"
+  },
+  {
+    "ParameterKey": "Env",
+    "ParameterValue": "prf"
+  },
+  {
+    "ParameterKey": "VPCID",
+    "ParameterValue": "vpc-070a892fc70505abf"
+  },
+  {
+    "ParameterKey": "AMI",
+    "ParameterValue": "ami-015965d11379c74af"
+  },
+  {
+    "ParameterKey": "InstanceType",
+    "ParameterValue": "t2.micro"
+  },
+  {
+    "ParameterKey": "keyname",
+    "ParameterValue": "dev"
+  },
+  {
+    "ParameterKey": "SecurityGroupsList",
+    "ParameterValue": "sg-008a0c1f0e0745f87"
+  }
+]
