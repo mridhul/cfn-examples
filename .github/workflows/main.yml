@@ -16,7 +16,7 @@ jobs:
       run: echo Hello, world!
     - uses: intuit/cfn-deploy@master
       env:
-        AWS_REGION: us-east-2
+        AWS_REGION: us-west-2
         STACK_NAME: cfn-deploy
         TEMPLATE_FILE: ec2.yml
         PARAMETERS_FILE: parameter.json
